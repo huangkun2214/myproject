@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{{ form.csrf_token }}
+<form method="post">
+    {{ form.csrf_token }}
+    {{form.hidden_tag()}}
+   <p>
+       {{form.username.label}}:{{form.username}}
+   </p>
+    <p>
+        {{form.password.label}} :{{form.password}}
+    </p>
+    {% for msg in get_flashed_messages(): %}
+    <span>{{msg}}</span>
+    {% endfor %}
+   <p>
+
+   </p>
+
+    {{form.submit}}
+
+    </form>
+    {{name}}
+    <div>{{form.remember.label}}{{form.remember}}
+        <a href="{{url_for('users.reset_password1')}}">忘记密码？</a>
+    </div>
+    <div>没有账号？<a href="{{url_for('users.reginest')}}">注册一个</a></div>
+
+</body>
+</html>

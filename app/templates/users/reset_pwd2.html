@@ -1,0 +1,14 @@
+{% extends 'users/base_reset_pwd.html' %}
+{% block body%}
+ <p>
+             {{form.auth_code.label}}:{{form.auth_code}}
+        </p>
+        <p>
+             {% for msg in get_flashed_messages(): %}
+                <span>{{msg}}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.submit}}
+        </p>
+{% endblock %}

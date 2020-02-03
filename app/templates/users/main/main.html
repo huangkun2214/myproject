@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<form action="{{url_for('main1.index')}}" method="post" enctype="multipart/form-data">
+{{ form.csrf_token }}
+     <div>
+        <P>
+            {{form.contend}}
+        </P>
+        <p>
+            {{form.category.label}}:{{form.category}}
+        </p>
+           {{form.pic}}
+        <p>
+
+        </p>
+        <p>
+            {{form.submit}}
+        </p>
+
+
+    </div>
+</form>
+<div>
+       {% for x in posts%}
+    <ol>
+        <ul>
+        {{x.pic}}{{x.content}}-{{x.timestamp}}
+    </ul>
+    </ol>
+
+
+
+    {% endfor %}
+
+</div>
+<img src="static/uploads/WwKBcVHAZscXeVD6k8UP3vdUDP3XxWZ9.jpg">
+
+</body>
+</html>
